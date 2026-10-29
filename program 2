@@ -1,0 +1,22 @@
+def rotate_left_without_carry(binary, positions):
+    print("\nROL - Rotate Left Without Carry")
+    print("Original number:", binary)
+    for i in range(positions):
+        binary = binary[1:] + binary[0]
+        print("After rotation", i + 1, ":", binary)
+    print("Final result:", binary)
+def rotate_left_with_carry(binary, carry, positions):
+    print("\nRCL - Rotate Left With Carry")
+    print("Original number:", binary)
+    print("Initial carry:", carry)
+    for i in range(positions):
+        new_carry = binary[0]
+        binary = binary[1:] + carry
+        carry = new_carry
+        print("After rotation", i + 1, ":", binary,
+              "| Carry:", carry)
+    print("Final result:", binary)
+    print("Final carry:", carry)
+number = "10110110"
+rotate_left_without_carry(number, 2)
+rotate_left_with_carry(number, "0", 2)
